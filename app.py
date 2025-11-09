@@ -120,7 +120,6 @@ with st.container():
         st.success(f"❤️ Heart Rate Result: **{heartbeat_status}**")
         st.info(f"🫁 Oxygen Status: **{oxygen_status}**")
 
-        st.subheader(f"🤖 ML Predicted Stress Level: **{stress_label}**")
 
         # Suggestions
         st.subheader("💡 Suggested Actions:")
@@ -128,4 +127,5 @@ with st.container():
             st.write(f"- {tip}")
 
     st.markdown("</div>", unsafe_allow_html=True)
+
 
