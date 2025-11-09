@@ -66,12 +66,35 @@ def evaluate_oxygen(spo2):
 # ------------------ ACTIVITY SUGGESTIONS ------------------
 def suggestions(stress_type):
     stress_type = stress_type.lower()
-    if "high" in stress_type:
-        return ["🧘 Deep Breathing", "🎧 Calm Music", "🚶 Short Walk"]
+
+    if "bradycardia" in stress_type:
+        return [
+            "🛑 Sit down and rest",
+            "💧 Drink water",
+            "🫁 Take slow deep breaths",
+            "⚕ If dizziness continues, seek medical help"
+        ]
+
+    elif "high" in stress_type:
+        return [
+            "🧘 Deep Breathing (4s inhale → 4s hold → 6s exhale)",
+            "🎧 Listen to calm music",
+            "🚶 Take a short walk",
+        ]
+
     elif "moderate" in stress_type:
-        return ["☀ Fresh Air", "🎯 Relaxing Activity", "📞 Talk to someone"]
+        return [
+            "☀ Go outside for fresh air",
+            "🎯 Do a relaxing activity (drawing, writing)",
+            "📞 Talk to someone you trust",
+        ]
+
     else:
-        return ["✅ You are relaxed", "💧 Stay hydrated"]
+        return [
+            "✅ You are relaxed",
+            "💧 Stay hydrated",
+            "🙂 Maintain positive routine",
+        ]
 
 
 # ------------------ UI INPUT ------------------
@@ -105,3 +128,4 @@ with st.container():
             st.write(f"- {tip}")
 
     st.markdown("</div>", unsafe_allow_html=True)
+
